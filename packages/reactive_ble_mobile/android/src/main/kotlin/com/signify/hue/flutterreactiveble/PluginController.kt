@@ -270,7 +270,7 @@ class PluginController {
     }
 
     private fun readRssi(call: MethodCall, result: Result) {
-        val args = pb.ClearGattCacheRequest.parseFrom(call.arguments as ByteArray)
+        val args = pb.ReadRssiRequest.parseFrom(call.arguments as ByteArray)
 
         bleClient.readRssi(args.deviceId)
                 .observeOn(AndroidSchedulers.mainThread())
