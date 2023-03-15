@@ -30,7 +30,7 @@ void main() {
     writeWithOutResponse: _ble.writeCharacteristicWithoutResponse,
     subscribeToCharacteristic: _ble.subscribeToCharacteristic,
     logMessage: _bleLogger.addToLog,
-    streamRssi: _ble.streamRssi,
+    readRssi: _ble.readRssi,
   );
   runApp(
     MultiProvider(

@@ -309,17 +309,11 @@ class FlutterReactiveBle {
       .clearGattCache(deviceId)
       .then((info) => info.dematerialize());
 
-  /// Streams the RSSI of the of the peripheral with the given device ID.
+  /// Reads the RSSI of the of the peripheral with the given device ID. 
   /// The peripheral must be connected, otherwise a [PlatformException] will be
   /// thrown
-  ///
-  /// [rssiPeriod] controls the interval at which a new RSSI value will be
-  /// returned. Defaults to 1 second.
-  Stream<int> streamRssi(
-    String deviceId, {
-    Duration rssiPeriod = const Duration(seconds: 1),
-  }) =>
-      _blePlatform.streamRssi(deviceId, rssiPeriod);
+  Future<int> readRssi(String deviceId) async =>
+      _blePlatform.readRssi(deviceId);
 
   /// Subscribes to updates from the characteristic specified.
   ///

@@ -87,7 +87,7 @@ abstract class ReactiveBlePlatform extends PlatformInterface {
     throw UnimplementedError('clearGattCache() has not been implemented.');
   }
 
-  Stream<int> streamRssi(String deviceId, Duration rssiPeriod) {
+  Future<int> readRssi(String deviceId) async {
     throw UnimplementedError(
         'readRssi(String deviceId) has not been implemented.');
   }
